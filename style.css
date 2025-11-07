@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('fonts/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SatoshiBold';
+  src: url('fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Satoshi', 'Segoe UI', Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coming-soon h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 48px;
+  font-family: 'SatoshiBold', 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+  text-transform: lowercase;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.coming-soon .brand {
+  color: #ffffff;
+}
+
+.coming-soon .status {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Satoshi', 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+}
