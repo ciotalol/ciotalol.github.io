@@ -41,7 +41,6 @@ body {
 
 .coming-soon h1 {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -63,13 +62,14 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: #ffffff;
 }
 
 .status {
   color: rgba(255, 255, 255, 0.6);
   font-family: 'Satoshi', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  font-size: 1rem;
 }
 
 @media (min-width: 600px) {
