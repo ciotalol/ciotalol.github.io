@@ -36,12 +36,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   animation: fadeIn 0.8s ease-in-out;
 }
 
 .coming-soon h1 {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -56,18 +56,16 @@ body {
 .logo-icon {
   width: clamp(48px, 12vw, 64px);
   height: clamp(48px, 12vw, 64px);
-  display: inline-block;
   vertical-align: middle;
 }
 
-.coming-soon .brand {
-  color: #ffffff;
+.brand {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.coming-soon .status {
+.status {
   color: rgba(255, 255, 255, 0.6);
   font-family: 'Satoshi', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
@@ -86,12 +84,12 @@ body {
     gap: 0.3rem;
   }
 
-  .coming-soon .brand {
-    order: 1;
+  .brand {
+    justify-content: center;
   }
 
-  .coming-soon .status {
-    order: 2;
+  .status {
+    display: block;
   }
 }
 
