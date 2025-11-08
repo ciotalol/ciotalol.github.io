@@ -24,26 +24,37 @@ body {
   background-color: #0d0d0d;
   color: #ffffff;
   font-family: 'Satoshi', 'Segoe UI', Arial, sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .coming-soon h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-size: 48px;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: clamp(1.75rem, 6vw, 3rem);
   font-family: 'SatoshiBold', 'Segoe UI', Arial, sans-serif;
   color: #ffffff;
   text-transform: lowercase;
+  line-height: 1.2;
 }
 
 .logo-icon {
-  width: 64px;
-  height: 64px;
+  width: clamp(48px, 12vw, 64px);
+  height: clamp(48px, 12vw, 64px);
   display: inline-block;
   vertical-align: middle;
 }
@@ -56,4 +67,14 @@ body {
   color: rgba(255, 255, 255, 0.6);
   font-family: 'Satoshi', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.coming-soon {
+  animation: fadeIn 0.8s ease-in-out;
 }
