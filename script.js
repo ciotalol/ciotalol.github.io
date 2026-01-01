@@ -63,3 +63,4 @@ function createSnowflake() {
 for (let i = 0; i < snowflakeCount; i++) {
     createSnowflake();
 }
+*/
