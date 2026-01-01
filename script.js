@@ -1,7 +1,14 @@
 const snowflakesContainer = document.getElementById('snowflakes');
 const snowflakeCount = 50;
-const containerWidth = window.innerWidth;
-const containerHeight = window.innerHeight;
+
+let containerWidth = window.innerWidth;
+let containerHeight = window.innerHeight;
+
+// pls niech to dziala jak nie to mnie jebac
+window.addEventListener('resize', () => {
+    containerWidth = window.innerWidth;
+    containerHeight = window.innerHeight;
+});
 
 // moze zadziala xd
 function createSnowflake() {
@@ -9,7 +16,7 @@ function createSnowflake() {
     snowflake.classList.add('snowflake');
 
     const size = Math.random() * 5 + 2;
-    const x = Math.random() * containerWidth;
+    let x = Math.random() * containerWidth;
     let y = Math.random() * -containerHeight;
 
     snowflake.style.width = `${size}px`;
@@ -21,13 +28,29 @@ function createSnowflake() {
     const speed = Math.random() * 1.5 + 0.5;
     const amplitude = Math.random() * 20 + 5;
 
-    function animate() {
+    let outOfViewSince = null;
+
+    function animate(timestamp) {
         y += speed;
-        snowflake.style.transform = `translateX(${Math.sin(y / 20) * amplitude}px) translateY(${y}px)`;
+
+        snowflake.style.transform =
+            `translateX(${Math.sin(y / 20) * amplitude}px) translateY(${y}px)`;
+
         if (y > containerHeight) {
-            y = -10;
-            snowflake.style.left = `${Math.random() * containerWidth}px`;
+            if (outOfViewSince === null) {
+                outOfViewSince = performance.now();
+            }
+
+            if (performance.now() - outOfViewSince >= 3000) {
+                y = -10;
+                x = Math.random() * containerWidth;
+                snowflake.style.left = `${x}px`;
+                outOfViewSince = null;
+            }
+        } else {
+            outOfViewSince = null;
         }
+
         requestAnimationFrame(animate);
     }
 
