@@ -1,3 +1,4 @@
+/*
 const snowflakesContainer = document.getElementById('snowflakes');
 const snowflakeCount = 50;
 
